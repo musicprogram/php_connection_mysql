@@ -22,14 +22,25 @@
 			$statement->execute(array());
 			$results = $statement->fetchAll();
 			// var_dump($results);
+
+			$SqlStatus = 'SELECT users.*, StatusUser.StatusName FROM Users INNER JOIN StatusUser ON StatusUser.SatusId = users.SatusId '; 
+			$statementStatus = $pdo->prepare($SqlStatus);
+			$statementStatus->execute();
+			$resultsStatus = $statementStatus->fetchAll();
+			// var_dump($resultsStatus);
+
+
 		?>
 	</pre>
-
+	
 	
 
 	<div class="container">
 		
-      <table>
+     <div class="row">
+     	<div class="col s12 m6 green white-text">
+     		
+ <table>
         <thead>
           <tr>
               <th>id</th>
@@ -61,6 +72,45 @@
         
         </tbody>
       </table>
+
+     	</div>
+     	<div class="col s12 m6 blue white-text">
+     		 <table>
+        <thead>
+          <tr>
+              <th>id</th>
+         
+              <th>first name</th>
+            
+              <th>status</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        	
+        <?php 
+        	foreach ($resultsStatus as $rs) {
+       
+        ?>
+        	<tr>
+        		<td><?php echo$rs['Id']; ?></td>
+        		
+        		<td><?php echo$rs['FirstName']; ?></td>
+        		<td><?php echo$rs['StatusName']; ?></td>
+        		
+        	</tr>
+				<?php 
+					}
+        ?>
+        
+        </tbody>
+      </table>
+
+
+     	</div>
+     </div>
+
+
 	</div>
 
 	
