@@ -37,6 +37,7 @@
               <th>first name</th>
               <th>address</th>
               <th>city</th>
+              <th>status</th>
           </tr>
         </thead>
 
@@ -52,6 +53,7 @@
         		<td><?php echo$rs['FirstName']; ?></td>
         		<td><?php echo$rs['Address']; ?></td>
         		<td><?php echo$rs['City']; ?></td>
+        		<td><?php echo$rs['SatusId']; ?></td>
         	</tr>
 				<?php 
 					}
