@@ -11,11 +11,11 @@
 <body>
 	<pre>
 		<?php 
-		$sql = 'SELECT * FROM users'; 
-		foreach( $pdo->query( $sql ) as $rs ){
-			var_dump($rs);
-		}
-	?>
+			$sql = 'SELECT * FROM users'; 
+			foreach( $pdo->query( $sql ) as $rs ){
+				var_dump($rs);
+			}
+		?>
 	</pre>
 </body>
 </html>

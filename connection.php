@@ -10,7 +10,7 @@
 									 $user,
 									 $password
 									);
-		echo 'conexión ok';
+		// echo 'conexión ok';
 	}catch( PDOException $e){
 		echo 'Error al contactarnos' .$e->getMessage();
 	}	
